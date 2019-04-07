@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">GoUni Hub</string>
+    <string name="email">Reg No or Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="click_here_to_signup">Dont have account? Sign up</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Profile</string>
+    <string name="title_dashboard">Chat</string>
+    <string name="title_notifications">Notification</string>
+
+
+    <string name="PROMT">SELECT YOUR LEVEL</string>
+
+    <string-array name="LEVEL">
+        <item>SELECT LEVEL</item>
+        <item>100L</item>
+        <item>200L</item>
+        <item>300L</item>
+        <item>400L</item>
+
+
+    </string-array>
+    <string name="title_activity_home_acti">COMPUTER SCIENCE HUB</string>
+    <string name="phone">Phone</string>
+    <string name="save">SAVE</string>
+    <string name="click_image_to_upload_profile_picture">Click Image to upload Profile picture</string>
+    <string name="todo">TODO</string>
+    <string name="name">Name</string>
+
+
+</resources>

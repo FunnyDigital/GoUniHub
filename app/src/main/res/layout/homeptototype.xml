@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/reletive1"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="44dp"
+        android:layout_below="@+id/text"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/profileicon"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:id="@+id/EV"
+
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/reletive1"/>
+
+    <EditText
+        android:id="@+id/name1"
+        android:background="@drawable/roundedbutton"
+        android:layout_width="300dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/EV"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:autofillHints="" tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/phone1"
+        android:layout_width="303dp"
+        android:textAlignment="center"
+        android:background="@drawable/roundedbutton"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone1"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/roundedbutton"
+        android:layout_marginTop="20dp"
+        android:dropDownWidth="20dp"
+        android:entries="@array/LEVEL"
+        android:prompt="@string/PROMT"
+        android:spinnerMode="dialog"
+        android:visibility="visible" />
+
+    <Button
+        android:layout_width="1in"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save"
+        android:id="@+id/save1"
+        android:background="@drawable/roundedbutton"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner1"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:textAlignment="center"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:text="@string/click_image_to_upload_profile_picture"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:layout_marginBottom="40dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "406322176987",
+    "firebase_url": "https://gounihub.firebaseio.com",
+    "project_id": "gounihub",
+    "storage_bucket": "gounihub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406322176987:android:ce3724754db12a30",
+        "android_client_info": {
+          "package_name": "com.patrick.bitvilltenologies.gounihub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406322176987-jd2u8usk83s2ffoaj9lfp9b0jffituvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.patrick.bitvilltenologies.gounihub",
+            "certificate_hash": "6a2a2452f3612c3f28d11a8a88fe376e9814b46b"
+          }
+        },
+        {
+          "client_id": "406322176987-gifq376sa10q3p7a69ec7o7rhsglv4i9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdauyJs7JQApqfgJaYiYhADd8LWdDUMtE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406322176987-gifq376sa10q3p7a69ec7o7rhsglv4i9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
