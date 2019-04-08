@@ -22,11 +22,12 @@
 
     </string-array>
     <string name="title_activity_home_acti">COMPUTER SCIENCE HUB</string>
-    <string name="phone">Phone</string>
+    <string name="phone">PHONE</string>
     <string name="save">SAVE</string>
     <string name="click_image_to_upload_profile_picture">Click Image to upload Profile picture</string>
     <string name="todo">TODO</string>
     <string name="name">Name</string>
+    <string name="title_activity_notification">Notification</string>
 
 
 </resources>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,10 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signup extends AppCompatActivity implements View.OnClickListener {
 
-    EditText editTextEmail,editTextpassword2,editTextpassword,REGNO;
+    EditText editTextEmail,editTextpassword2,editTextpassword,userregno,username,userphone;
+    Spinner userlevel;
 
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
@@ -34,8 +37,14 @@ Button signup;
 
 editTextpassword2=(EditText)findViewById(R.id.editTextpassword2);
 editTextpassword =(EditText)findViewById(R.id.editTextpassword1);
-REGNO=(EditText)findViewById(R.id.regnob);
 editTextEmail=(EditText)findViewById(R.id.email1);
+
+
+userregno=(EditText)findViewById(R.id.regnob);
+username=(EditText)findViewById(R.id.name);
+userphone=(EditText)findViewById(R.id.phone1);
+userlevel=(Spinner)findViewById(R.id.spinner1);
+
 
 
 
@@ -53,10 +62,16 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
     }
 
     private void registerUser(){
-        String email =editTextEmail.getText().toString().trim();
+        final String email =editTextEmail.getText().toString().trim();
         String password= editTextpassword2.getText().toString().trim();
         String password1= editTextpassword.getText().toString().trim();
-        String regno=REGNO.getText().toString().trim();
+        final String regno=userregno.getText().toString().trim();
+        final String name=username.getText().toString().trim();
+        final String phone=userphone.getText().toString().trim();
+        final String level=userlevel.getSelectedItem().toString().trim();
+
+
+
 
 
 
@@ -68,22 +83,20 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setText("type a vail email,eh computer science");
+            editTextEmail.setHint("type a vail email,eh computer science");
             editTextEmail.requestFocus();
             return;
         }
 
         if (password.isEmpty()){
-            editTextpassword2.setText("password is empty");
+            editTextpassword2.setHint("password is empty");
             editTextpassword2.requestFocus();
             return;
         }
 
 
-
-
         if (password.length()<6){
-            editTextpassword2.setText("minimum is 4 number");
+            editTextpassword2.setHint("minimum is 4 number");
             editTextpassword2.requestFocus();
             return;
         }
@@ -104,9 +117,31 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
                     progressBar.setVisibility(View.GONE);
                     if(task.isSuccessful()){
 
+
+                        User user = new User(
+
+                                name,
+                                phone,
+                                regno,
+                                level
+
+                        );
+                        FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance()
+                                .getCurrentUser().getUid())
+                                .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(signup.this,"registration completed",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+
+
                         finish();
 
-                       Intent intent = new Intent(signup.this,Home.class);
+                       Intent intent = new Intent(signup.this,Notification.class);
                        startActivity(intent);
 
 

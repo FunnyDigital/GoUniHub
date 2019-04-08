@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -59,25 +60,53 @@ public class Home extends AppCompatActivity {
 
     String profileImageurl;
 
-    FirebaseAuth mAuth;
+    FirebaseUser mAuth;
 
     DatabaseReference databaseReference;
+
     String uid;
 
+///bottom navbar///////////////////////////////////////////////////////////////////////////////////
 
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.notification:
+                  Intent intent =new Intent(Home.this,Notification.class);
+                  startActivity(intent);
+                    return true;
+
+                case R.id.profile:
+
+                    return true;
+
+            }
+            return false;
+        }
+    };
+
+
+//////end butom navebar//////////////////////////////////////////////////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+//bootom nabe callingher
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//////////////////////////
       android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
-      setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
 
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance().getCurrentUser();
+
 
         imageViewz=(ImageView)findViewById(R.id.imageView1);
         name = (EditText) findViewById(R.id.name1);
@@ -87,7 +116,10 @@ public class Home extends AppCompatActivity {
         spinner=(Spinner)findViewById(R.id.spinner1);
         progressBarz=(ProgressBar)findViewById(R.id.progressBar2);
 
-        uid=mAuth.getCurrentUser().getUid();
+        uid=mAuth.getUid();
+
+
+
 
 
 
@@ -96,6 +128,7 @@ databaseReference=FirebaseDatabase.getInstance().getReference();
 databaseReference.addValueEventListener(new ValueEventListener() {
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
+
 
     }
 
@@ -138,7 +171,7 @@ databaseReference.addValueEventListener(new ValueEventListener() {
     @Override
     protected void onStart() {
         super.onStart();
-        if (mAuth.getCurrentUser()==null){
+        if (mAuth==null){
             finish();
             startActivity(new Intent(this,MainActivity .class));
         }
@@ -150,7 +183,7 @@ databaseReference.addValueEventListener(new ValueEventListener() {
 
     private void loadUserInformation() {
 
-final FirebaseUser firebaseUser = mAuth.getCurrentUser() ;
+final FirebaseUser firebaseUser = mAuth;
 
 
 
@@ -164,6 +197,8 @@ final FirebaseUser firebaseUser = mAuth.getCurrentUser() ;
         name.setText(firebaseUser.getDisplayName());
 
     }
+
+
 
 
     if (firebaseUser.isEmailVerified()){
@@ -196,32 +231,24 @@ Toast.makeText(Home.this,"DATA SENT FOR VERIFICATION",Toast.LENGTH_SHORT).show()
 
 
 
-        if (displayname.isEmpty()) {
-            name.setText("name is requited for authentication");
-            return;
 
-        }
+        if (displayname.isEmpty()&& regno.isEmpty()&&Phone.isEmpty()&&Spinner.isEmpty()) {
+            name.setHint("PLEASE FILL FIELDS TO COMPLETE PROFILE");
+            PHONE.setHint("PLEASE FILL FIELDS TO COMPLETE PROFILE");
+            spinner.setPrompt("PLEASE FILL FIELDS TO COMPLETE PROFILE");
+            Regno.setHint("PLEASE FILL FIELDS TO COMPLETE PROFILE");
 
-        if (regno.isEmpty()){
-            Regno.setText("your regno");
-            return;
-        }
-
-        if (Phone.isEmpty()){
-            PHONE.setText("input phone number");
-            PHONE.requestFocus();
-        }
-        if (Spinner.isEmpty()){
-            spinner.setPrompt("select level");
 
         }
 
 
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
+
+        FirebaseUser firebaseUser = mAuth;
 
         progressBarz.setVisibility(View.VISIBLE);
 
-        if (firebaseUser != null && profileImageurl != null && Phone!=null && regno !=null ) {
+        if (firebaseUser != null && profileImageurl != null ) {
 
 
 
@@ -229,6 +256,11 @@ Toast.makeText(Home.this,"DATA SENT FOR VERIFICATION",Toast.LENGTH_SHORT).show()
                     .setDisplayName(displayname)
                     .setPhotoUri(Uri.parse(profileImageurl))
                     .build();
+
+
+
+
+
 
             firebaseUser.updateProfile(profile)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -249,6 +281,8 @@ Toast.makeText(Home.this,"DATA SENT FOR VERIFICATION",Toast.LENGTH_SHORT).show()
 
         }
     }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     @Override

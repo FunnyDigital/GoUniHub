@@ -33,7 +33,10 @@
         <activity android:name=".Portal" />
         <activity android:name=".ATENDANCE" />
         <activity android:name=".WEB" />
-        <activity android:name=".Myclasses"></activity>
+        <activity android:name=".Myclasses" />
+        <activity
+            android:name=".Notification"
+            android:label="@string/title_activity_notification"></activity>
     </application>
 
 </manifest>
