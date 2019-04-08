@@ -141,7 +141,7 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
 
                         finish();
 
-                       Intent intent = new Intent(signup.this,Notification.class);
+                       Intent intent = new Intent(signup.this,Home.class);
                        startActivity(intent);
 
 

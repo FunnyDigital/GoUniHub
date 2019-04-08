@@ -96,7 +96,7 @@ mAuth.signInWithEmailAndPassword(semail,spassword).addOnCompleteListener(new OnC
         if(task.isSuccessful()){
             finish();
             progressBar.setVisibility(View.GONE);
-            Intent intent = new Intent(MainActivity.this,Notification.class);
+            Intent intent = new Intent(MainActivity.this,Home.class);
             Toast.makeText(getApplicationContext(),"WELCOME",Toast.LENGTH_LONG).show();
 
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP );

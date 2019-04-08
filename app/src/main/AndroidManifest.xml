@@ -27,16 +27,23 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:replace="android:screenOrientation" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".signup" />
-        <activity android:name=".Home" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".signup"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Home"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".Portal" />
         <activity android:name=".ATENDANCE" />
         <activity android:name=".WEB" />
         <activity android:name=".Myclasses" />
         <activity
             android:name=".Notification"
-            android:label="@string/title_activity_notification"></activity>
+            android:label="@string/title_activity_notification" />
+        <activity android:name=".Pfileupdate"></activity>
     </application>
 
 </manifest>

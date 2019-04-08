@@ -7,9 +7,12 @@
         android:id="@+id/exit"
         app:showAsAction="ifRoom"
         android:title="LOG OUT" />
-
+    profileupdate
    <item
-       android:id="@+id/about"
-       android:title="ABOUT"></item>
+       android:id="@+id/profileupdate"
+       android:title="PROFILE UPDATE"></item>
+    <item
+        android:id="@+id/about"
+        android:title="ABOUT"></item>
 
 </menu>
