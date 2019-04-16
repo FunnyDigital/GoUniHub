@@ -42,7 +42,7 @@
     android:layout_below="@+id/reletive1"/>
 
     <EditText
-        android:id="@+id/name1"
+        android:id="@+id/name"
         android:background="@drawable/roundedbutton"
         android:layout_width="300dp"
         android:textAlignment="center"
@@ -61,7 +61,7 @@
         android:textAlignment="center"
         android:background="@drawable/roundedbutton"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name1"
+        android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:ems="10"

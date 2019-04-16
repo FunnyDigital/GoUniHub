@@ -69,10 +69,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
-
-
             android:layout_marginRight="10dp"
-            android:autofillHints=""
             android:background="@android:drawable/editbox_background_normal"
             android:ems="10"
             android:hint="@string/email"
@@ -88,14 +85,11 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:autofillHints=""
             android:background="@android:drawable/editbox_background_normal"
-
             android:ems="10"
-
             android:hint="@string/password"
             android:inputType="numberPassword"
-            android:maxLength="8"
+            android:maxLength="6"
             android:textColorHint="#000" />
 
         <ProgressBar

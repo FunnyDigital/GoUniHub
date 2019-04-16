@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">GoUni Hub</string>
-    <string name="email">Reg No or Email</string>
+    <string name="cs">COMPUTER SCIENCE</string>
+    <string name="email">Email (if Verified)</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="click_here_to_signup">Dont have account? Sign up</string>

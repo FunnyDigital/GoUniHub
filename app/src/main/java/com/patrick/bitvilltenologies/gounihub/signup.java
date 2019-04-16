@@ -2,7 +2,6 @@ package com.patrick.bitvilltenologies.gounihub;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -28,7 +27,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
-Button signup;
+    Button signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ editTextEmail=(EditText)findViewById(R.id.email1);
 
 
 userregno=(EditText)findViewById(R.id.regnob);
-username=(EditText)findViewById(R.id.name);
+username=(EditText)findViewById(R.id.name11);
 userphone=(EditText)findViewById(R.id.phone1);
 userlevel=(Spinner)findViewById(R.id.spinner1);
 
@@ -65,10 +64,13 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
         final String email =editTextEmail.getText().toString().trim();
         String password= editTextpassword2.getText().toString().trim();
         String password1= editTextpassword.getText().toString().trim();
+
         final String regno=userregno.getText().toString().trim();
         final String name=username.getText().toString().trim();
         final String phone=userphone.getText().toString().trim();
         final String level=userlevel.getSelectedItem().toString().trim();
+
+
 
 
 
@@ -96,7 +98,7 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
 
 
         if (password.length()<6){
-            editTextpassword2.setHint("minimum is 4 number");
+            editTextpassword2.setHint("max password length is 6");
             editTextpassword2.requestFocus();
             return;
         }
@@ -105,7 +107,7 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
 
 
 
-        if (password.matches(password1)){
+        if (password.matches(password1) && username !=null && userregno !=null && userlevel !=null && userphone !=null){
 
 
 
@@ -116,6 +118,9 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressBar.setVisibility(View.GONE);
                     if(task.isSuccessful()){
+
+
+
 
 
                         User user = new User(
@@ -132,29 +137,27 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(signup.this,"registration completed",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(signup.this,"WELCOME PROGRAMMER ",Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
 
-
-
                         finish();
 
-                       Intent intent = new Intent(signup.this,Home.class);
+                       Intent intent = new Intent(signup.this,Notification.class);
                        startActivity(intent);
 
 
-                        Toast.makeText(getApplicationContext(),"USER IS REGISTERED",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"USER IS REGISTERED",Toast.LENGTH_SHORT).show();
 
                     }else {
 
                         if (task.getException()instanceof FirebaseAuthException){
 
-                            Toast.makeText(getApplicationContext(),"YOU ARE ALREADY REGISTERED",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"YOU ARE ALREADY REGISTERED",Toast.LENGTH_SHORT).show();
 
                         }else {
-                            Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -162,7 +165,7 @@ progressBar=(ProgressBar)findViewById(R.id.progressBar);
 
         }else {
 
-            Toast.makeText(getApplicationContext(),"wrong password",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"PASSWORD DON'T MATCH",Toast.LENGTH_LONG).show();
         }
 
 

@@ -21,6 +21,10 @@
             "package_name": "com.patrick.bitvilltenologies.gounihub",
             "certificate_hash": "6a2a2452f3612c3f28d11a8a88fe376e9814b46b"
           }
+        },
+        {
+          "client_id": "406322176987-gifq376sa10q3p7a69ec7o7rhsglv4i9.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [

@@ -6,7 +6,7 @@
     <item
         android:id="@+id/exit"
         app:showAsAction="ifRoom"
-        android:title="LOG OUT" />
+        android:title="LOG OUT"/>
     profileupdate
    <item
        android:id="@+id/profileupdate"

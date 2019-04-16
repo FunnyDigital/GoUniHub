@@ -1,124 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout
     android:layout_width="match_parent"
+    android:id="@+id/container2"
     android:layout_height="match_parent"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
-    tools:context=".Home">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zxing_custom_viewfinder_mask"
+        android:gravity="top"
+        app:titleTextColor="#ffff" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
 
-        <include layout="@layout/content_home" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            tools:context="com.patrick.bitvilltenologies.gounihub.Home"
+            tools:showIn="@layout/activity_main">
 
-        <com.github.clans.fab.FloatingActionMenu
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp"
-            fab:menu_animationDelayPerItem="50"
-            fab:menu_backgroundColor="@android:color/transparent"
-            fab:menu_buttonSpacing="0dp"
-            fab:menu_colorNormal="#ffffff"
-            fab:menu_colorPressed="#317bcf"
-            fab:menu_colorRipple="#99FFFFFF"
-            fab:menu_fab_hide_animation="@anim/hide_to_bottom"
-            fab:menu_fab_show_animation="@anim/show_from_bottom"
-            fab:menu_fab_size="normal"
-            fab:menu_icon="@drawable/fab_add"
-            fab:menu_labels_colorNormal="#333333"
-            fab:menu_labels_colorPressed="#444444"
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/EV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                android:scaleType="centerCrop" />
 
-            fab:menu_labels_colorRipple="#66FFFFFF"
-            fab:menu_labels_cornerRadius="3dp"
-            fab:menu_labels_ellipsize="none"
-            fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
-            fab:menu_labels_margin="0dp"
-            fab:menu_labels_maxLines="-1"
-            fab:menu_labels_padding="8dp"
-            fab:menu_labels_paddingBottom="4dp"
-            fab:menu_labels_paddingLeft="8dp"
-            fab:menu_labels_paddingRight="8dp"
-            fab:menu_labels_paddingTop="4dp"
-            fab:menu_labels_position="left"
-            fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
-            fab:menu_labels_showShadow="true"
-            fab:menu_labels_singleLine="false"
-            fab:menu_labels_textColor="#FFFFFF"
-            fab:menu_labels_textSize="14sp"
-            fab:menu_openDirection="up"
-            fab:menu_shadowColor="#66000000"
-            fab:menu_shadowRadius="4dp"
-            fab:menu_shadowXOffset="1dp"
-            fab:menu_shadowYOffset="3dp"
-            fab:menu_showShadow="true">
-
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/Myclasses"
+            <Button
+                android:id="@+id/savebtn2"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="My"
-                android:src="@android:drawable/stat_notify_chat"
-                app:fab_size="normal"
-                fab:fab_label="My classes" />
+                android:layout_below="@+id/imageView1"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                android:text="SAVE PROFILE PICTURE"
+                android:textAlignment="center" />
 
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/note"
+            <TextView
+                android:id="@+id/EV"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <ListView
+                android:id="@+id/listview"
+                style="@android:style/Widget.DeviceDefault.ListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/savebtn2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                android:divider="#8f8f8f"
+                android:textAlignment="center" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="notofication"
-                android:src="@android:drawable/stat_notify_chat"
-                fab:fab_label="SCHOOL NOTIFICATION"
-                fab:fab_size="normal" />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/attendance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="ATENDANCE"
-                android:src="@android:drawable/stat_notify_chat"
-                fab:fab_label="ATTENDANCE"
-                fab:fab_size="normal" />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/ACHIVE"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/stat_notify_chat"
-                fab:fab_label="ACHIEVE AND PROJECT HUB"
-                fab:fab_size="normal" />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:id="@+id/PROTAL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="Portal"
-                android:src="@android:drawable/stat_notify_chat"
-                fab:fab_label="SCHOOL PORTAL"
-                fab:fab_size="normal" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="158dp"
+                android:visibility="gone" />
 
 
-        </com.github.clans.fab.FloatingActionMenu>
+        </RelativeLayout>
+
+    </ScrollView>
 
 
-
-
-
-
-
-
-
-
-
-
-
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/zxing_custom_viewfinder_mask"
+        app:menu="@menu/navigation" />
 
 
 </RelativeLayout>
