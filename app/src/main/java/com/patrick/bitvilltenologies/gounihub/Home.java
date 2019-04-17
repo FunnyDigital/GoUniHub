@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -157,19 +158,22 @@ public  class  Home extends AppCompatActivity{
         final FirebaseUser firebaseUser = mAuth.getCurrentUser();
 
 
-        if (firebaseUser.getPhotoUrl() != null) {
+        //if (firebaseUser.getPhotoUrl() != null) {
 
-            Glide.with(Home.this.getApplicationContext()).load(firebaseUser.getPhotoUrl().toString()).into(imageViewz);
+            //Glide.with(Home.this.getApplicationContext()).load(firebaseUser.getPhotoUrl().toString()).into(imageViewz);
 
-        }else {
-            Glide.with(Home.this.getApplicationContext()).load(R.drawable.dp2).into(imageViewz);
-        }
+        //}else {
+           // Glide.with(Home.this.getApplicationContext()).load(R.drawable.dp2).into(imageViewz);
+       // }
 
 
         if (firebaseUser.getPhotoUrl()!=null){
-            Picasso.with(Home.this.getApplicationContext()).load(firebaseUser.getPhotoUrl().toString()).into(imageViewz);
+            Picasso.get().load(firebaseUser.getPhotoUrl().toString()).into(imageViewz);
         }else {
-            Glide.with(Home.this.getApplicationContext()).load(R.drawable.dp2).into(imageViewz);
+
+           Toast.makeText(Home.this,"cant display dp",Toast.LENGTH_LONG).show();
+
+
 
         }
     }

@@ -4,6 +4,7 @@
 
     <item
         android:id="@+id/updateprofile"
-        app:showAsAction="ifRoom"
-        android:title="UPDATE PROFILE" />
+        android:icon="@drawable/update"
+        android:title="UPDATE PROFILE"
+        app:showAsAction="ifRoom" />
 </menu>

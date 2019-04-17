@@ -17,6 +17,7 @@
 
 
         <com.github.clans.fab.FloatingActionMenu
+            android:fontFamily="@font/robotothins"
             android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,7 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="My"
-                android:src="@android:drawable/stat_notify_chat"
+                android:fontFamily="@font/robotothins"
+                android:src="@android:drawable/ic_menu_today"
+                app:fab_colorNormal="@color/cardview_dark_background"
                 app:fab_size="normal"
                 fab:fab_label="My classes" />
 
@@ -77,25 +80,33 @@
                 android:id="@+id/attendance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#fff"
                 android:onClick="ATENDANCE"
-                android:src="@android:drawable/stat_notify_chat"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                app:fab_colorNormal="@color/cardview_dark_background"
                 fab:fab_label="ATTENDANCE"
+                android:fontFamily="@font/robotothins"
                 fab:fab_size="normal" />
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/ACHIVE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/stat_notify_chat"
+                android:onClick="Achive"
+                android:src="@android:drawable/ic_menu_save"
+                app:fab_colorNormal="@color/cardview_dark_background"
+                android:fontFamily="@font/robotothins"
                 fab:fab_label="ACHIEVE AND PROJECT HUB"
                 fab:fab_size="normal" />
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/PROTAL"
+                android:fontFamily="@font/robotothins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="Portal"
-                android:src="@android:drawable/stat_notify_chat"
+                android:src="@drawable/cloud"
+                app:fab_colorNormal="@color/cardview_dark_background"
                 fab:fab_label="SCHOOL PORTAL"
                 fab:fab_size="normal" />
 

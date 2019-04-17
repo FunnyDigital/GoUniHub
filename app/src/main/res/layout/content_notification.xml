@@ -7,16 +7,16 @@
     android:id="@+id/container2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/zxing_status_text">
+    android:background="@color/zxing_custom_result_view">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/zxing_custom_viewfinder_mask"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:gravity="top"
         app:title="@string/app_name"
-        app:titleMarginTop="15dp"/>
+        app:titleMarginTop="15dp" />
 
 
     <ScrollView
@@ -37,11 +37,11 @@
 
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-               />
+                android:layout_alignParentBottom="true" />
 
 
         </RelativeLayout>
@@ -55,10 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/zxing_custom_viewfinder_mask"
+        android:background="@color/cardview_light_background"
         android:keepScreenOn="true"
         app:menu="@menu/navigation" />
-
 
 
 </RelativeLayout>

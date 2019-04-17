@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null){
                     Log.d(TAG,"onAuthStateChanged:signed_in:"+user.getUid());
-                    toastmessage("SUCCESFULLY SIGNED IN WITH :"+user.getEmail());
+                    toastmessage("LOADING FEED.....");
                 }else {
 
                 }

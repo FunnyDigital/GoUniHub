@@ -42,9 +42,11 @@ showNotificationwithIamge(bitmap);
         }
 
         @Override
-        public void onBitmapFailed(Drawable errorDrawable) {
+        public void onBitmapFailed(Exception e, Drawable errorDrawable) {
 
         }
+
+
 
         @Override
         public void onPrepareLoad(Drawable placeHolderDrawable) {
@@ -96,7 +98,7 @@ showNotificationwithIamge(bitmap);
 
 
        if (remoteMessage.getData()!=null)
-           Config.imageLink = remoteMessage.getData().get("i");
+           Config.imageLink = remoteMessage.getData().get("image");
            getimage(remoteMessage);
     }
 
@@ -113,7 +115,7 @@ showNotificationwithIamge(bitmap);
             @Override
             public void run() {
 
-                Picasso.with(getApplicationContext()).load(remoteMessage.getData().get("i")).into(target);
+                Picasso.get().load(remoteMessage.getData().get("image")).into(target);
 
             }
         });

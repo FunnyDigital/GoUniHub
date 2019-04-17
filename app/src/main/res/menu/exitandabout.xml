@@ -5,12 +5,10 @@
 
     <item
         android:id="@+id/exit"
-        app:showAsAction="ifRoom"
-        android:title="LOG OUT"/>
+        android:icon="@drawable/logout"
+        android:title="LOG OUT"
+        app:showAsAction="ifRoom" />
     profileupdate
-   <item
-       android:id="@+id/profileupdate"
-       android:title="PROFILE UPDATE"></item>
     <item
         android:id="@+id/about"
         android:title="ABOUT"></item>

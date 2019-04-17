@@ -15,6 +15,7 @@
         tools:context=".signup">
 
         <EditText
+            android:fontFamily="@font/robotothins"
             android:id="@+id/name11"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -28,6 +29,7 @@
 
 
         <EditText
+            android:fontFamily="@font/robotothins"
             android:id="@+id/regnob"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -43,6 +45,7 @@
 
 
         <EditText
+            android:fontFamily="@font/robotothins"
             android:id="@+id/email1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -57,6 +60,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
+            android:fontFamily="@font/robotothins"
             android:id="@+id/phone1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -75,6 +79,7 @@
             android:textColorHint="#000" />
 
         <EditText
+            android:fontFamily="@font/robotothins"
             android:id="@+id/editTextpassword1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -91,6 +96,7 @@
             android:textColorHint="#000" />
 
         <EditText
+            android:fontFamily="@font/robotothins"
             android:id="@+id/editTextpassword2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -107,6 +113,7 @@
             android:textColorHint="#000" />
 
         <Button
+            android:fontFamily="@font/robotothins"
             android:id="@+id/signup"
             android:layout_width="1in"
             android:layout_height="40dp"
@@ -119,6 +126,7 @@
             android:textStyle="bold" />
 
         <Spinner
+            android:fontFamily="@font/robotothins"
             android:id="@+id/spinner1"
             style="@style/Widget.AppCompat.Spinner.DropDown.ActionBar"
             android:layout_width="match_parent"
@@ -135,6 +143,7 @@
             android:visibility="visible" />
 
         <TextView
+            android:fontFamily="@font/robotothins"
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
